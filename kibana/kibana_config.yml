@@ -1,0 +1,8 @@
+setup:
+  index_patterns:
+    - pattern: "logs-*"
+      time_field: "@timestamp"
+
+dashboards:
+  - name: Log Visualization Dashboard
+    path: ./dashboards/log_visualization.ndjson

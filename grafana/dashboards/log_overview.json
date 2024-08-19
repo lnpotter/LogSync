@@ -1,0 +1,42 @@
+{
+    "title": "Log Overview Dashboard",
+    "panels": [
+      {
+        "title": "Log Volume Over Time",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(log_volume_total[5m])",
+            "legendFormat": "{{ service }}",
+            "datasource": "Prometheus"
+          }
+        ],
+        "xaxis": {
+          "mode": "time"
+        },
+        "yaxis": {
+          "format": "short",
+          "label": "Logs/sec"
+        }
+      },
+      {
+        "title": "Error Rate",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "sum(rate(log_errors_total[5m])) by (service)",
+            "legendFormat": "{{ service }}",
+            "datasource": "Prometheus"
+          }
+        ],
+        "xaxis": {
+          "mode": "time"
+        },
+        "yaxis": {
+          "format": "short",
+          "label": "Errors/sec"
+        }
+      }
+    ]
+  }
+  

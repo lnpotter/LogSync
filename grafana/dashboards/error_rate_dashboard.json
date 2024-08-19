@@ -1,0 +1,24 @@
+{
+    "title": "Error Rate Dashboard",
+    "panels": [
+      {
+        "title": "Error Rate by Service",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(log_errors_total[5m])",
+            "legendFormat": "{{ service }}",
+            "datasource": "Prometheus"
+          }
+        ],
+        "xaxis": {
+          "mode": "time"
+        },
+        "yaxis": {
+          "format": "short",
+          "label": "Errors/sec"
+        }
+      }
+    ]
+  }
+  

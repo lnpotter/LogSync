@@ -1,0 +1,6 @@
+{
+    "bootstrap.servers": "localhost:9092",
+    "group.id": "logsync-group",
+    "auto.offset.reset": "earliest"
+  }
+  

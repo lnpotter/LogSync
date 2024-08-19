@@ -1,0 +1,37 @@
+{
+  "_index": ".kibana",
+  "_type": "_doc",
+  "_id": "dashboard:log-visualization",
+  "_source": {
+    "type": "dashboard",
+    "dashboard": {
+      "title": "Log Visualization Dashboard",
+      "panelsJSON": [
+        {
+          "panelIndex": "1",
+          "gridData": { "x": 0, "y": 0, "w": 24, "h": 15 },
+          "type": "visualization",
+          "title": "Log Count Over Time",
+          "visualization": {
+            "indexPattern": "logs-*",
+            "timeField": "@timestamp",
+            "aggregation": "count",
+            "interval": "auto"
+          }
+        },
+        {
+          "panelIndex": "2",
+          "gridData": { "x": 0, "y": 15, "w": 24, "h": 15 },
+          "type": "visualization",
+          "title": "Top Services by Log Volume",
+          "visualization": {
+            "indexPattern": "logs-*",
+            "timeField": "@timestamp",
+            "aggregation": "terms",
+            "field": "service.keyword"
+          }
+        }
+      ]
+    }
+  }
+}

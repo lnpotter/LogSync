@@ -1,0 +1,14 @@
+{
+    "retention_policies": {
+      "auth-service": {
+        "retention_days": 30,
+        "archive_to_s3": true,
+        "s3_bucket": "logsync-archive-auth-service"
+      },
+      "payment-service": {
+        "retention_days": 7,
+        "archive_to_s3": false
+      }
+    }
+  }
+  
